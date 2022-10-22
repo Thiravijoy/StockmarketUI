@@ -1,0 +1,168 @@
+<div class="background">
+  <div class="set mx-auto">
+    <div class="back mx-auto">
+      <img class="stock" [src]="head" alt="stockmarket"><br>
+      <form [formGroup]="LoginForm" novalidate class="mt-4" (ngSubmit)="loginSubmit()">
+        <div class="mb-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" type="text" formControlName="userName">
+            <mat-error *ngIf="f['userName'].getError('required')!=null">Username is required</mat-error>
+          </mat-form-field>
+        </div><br>
+        <div class="form-group mb-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>Password</mat-label>
+            <input matInput type="passWord" formControlName="passWord" placeholder="Password"
+              [type]="hide_eye ? 'password':'text'">
+            <span class="material-icons" matSuffix (click)="hide_eye = !hide_eye">{{ hide_eye ?
+              'visibility_off':'visibility' }}</span>
+            <mat-error *ngIf="f['passWord'].getError('required')!=null">Password is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="logbutton">
+          <button type="button" class="btn btn-info" routerLink="/register">
+            <mat-icon class="person-add">person_add</mat-icon> REGISTER
+          </button>
+          <button class="btn btn-success" type="submit" id="login">
+            <mat-icon class="powersettingsnew">power_settings_new</mat-icon> LOGIN
+          </button>
+        </div>
+        <!-- <div *ngIf ="isLoading" class="center">
+          <app-loading-spinner > </app-loading-spinner>
+        </div> -->
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="background">
+  <div class="set mx-auto">
+    <div class="back mx-auto">
+      <img class="stock" [src]="head" alt="stockmarket"><br>
+      <form [formGroup]="LoginForm" novalidate class="mt-4">
+        <div class="mb-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="UserName" type="text" formControlName="userName">
+            <mat-error *ngIf="f['userName'].getError('required')!=null">Username is required</mat-error>
+          </mat-form-field>
+        </div><br>
+        <div class="form-group mb-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>PassWord</mat-label>
+            <input matInput type="passWord" formControlName="passWord" placeholder="PassWord"
+              [type]="hide_eye ? 'passWord':'text'">
+            <span class="material-icons" matSuffix (click)="hide_eye = !hide_eye">{{ hide_eye ?
+              'visibility_off':'visibility' }}</span>
+            <mat-error *ngIf="f['passWord'].getError('required')!=null">passWord is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="logbutton">
+          <button type="button" class="btn btn-info" routerLink="/register">
+            <mat-icon class="person-add">person_add</mat-icon> REGISTER
+          </button>
+          <button class="btn btn-success" (click)="loginSubmit()" id="login">
+            <mat-icon class="powersettingsnew">power_settings_new</mat-icon> LOGIN
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="background">
+  <div class="set mx-auto">
+    <div class="back mx-auto">
+      <img class="stock" [src]="head" alt="stockmarket"><br>
+      <form [formGroup]="LoginForm" novalidate class="mt-4">
+        <div class="mb-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="UserName" type="text" formControlName="userName">
+            <mat-error *ngIf="f['userName'].getError('required')!=null">Username is required</mat-error>
+          </mat-form-field>
+        </div><br>
+        <div class="form-group mb-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>PassWord</mat-label>
+            <input matInput type="passWord" formControlName="passWord" placeholder="PassWord"
+              [type]="hide_eye ? 'passWord':'text'">
+            <span class="material-icons" matSuffix (click)="hide_eye = !hide_eye">{{ hide_eye ?
+              'visibility_off':'visibility' }}</span>
+            <mat-error *ngIf="f['passWord'].getError('required')!=null">passWord is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="logbutton">
+          <button type="button" class="btn btn-info" routerLink="/register">
+            <mat-icon class="person-add">person_add</mat-icon> REGISTER
+          </button>
+          <button class="btn btn-success" (click)="loginSubmit()" id="login">
+            <mat-icon class="powersettingsnew">power_settings_new</mat-icon> LOGIN
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> -->

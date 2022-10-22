@@ -1,0 +1,141 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+mat-icon.addco {
+	display: inline-flex;
+	vertical-align: bottom;
+}
+
+.btn-align {
+	height: 40px;
+	float: right;
+	margin-top: 5px;
+	margin-right: 4px;
+}
+
+.bar {
+	color: rgb(254, 87, 87);
+	font-size: 52px;
+}
+
+.tabl {
+
+	margin-top: 40px;
+	position: relative;
+}
+
+.bg {
+	color: brown
+}
+
+th {
+	color: rgb(124, 12, 124);
+	opacity: 0.7;
+	font-size: medium;
+	border-bottom: 2px solid black;
+	padding-bottom: 20px;
+}
+
+.btnbg {
+	border: none;
+}
+
+.btnbg:hover {
+	border: none;
+	outline: none;
+}
+
+td,
+th {
+	text-align: left;
+}
+
+
+
+table {
+	border-collapse: collapse;
+	width: 97%;
+}
+
+.center {
+	text-align: center;
+}
+
+
+@media only screen and (max-width: 900px),
+(min-device-width: 768px) and (max-device-width: 800px) {
+
+	/* Force table to not be like tables anymore */
+	table,
+	thead,
+	tbody,
+	th,
+	td,
+	tr {
+		display: block;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+
+
+	}
+
+
+	tr {
+		border: 1px solid #ccc;
+	}
+
+	td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 40%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+	td:nth-of-type(1):before {
+		content: "company Code";
+	}
+
+	td:nth-of-type(2):before {
+		content: "company Name";
+	}
+
+	td:nth-of-type(3):before {
+		content: "company Ceo";
+	}
+
+	td:nth-of-type(4):before {
+		content: "company Website";
+	}
+
+	td:nth-of-type(5):before {
+		content: "stock Exchange";
+	}
+
+	td:nth-of-type(6):before {
+		content: "company Turnover";
+	}
+
+	td:nth-of-type(7):before {
+		content: "Latest Stockprice";
+	}
+}

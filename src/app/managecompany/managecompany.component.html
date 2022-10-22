@@ -1,0 +1,126 @@
+<div class="container-fluid mt-5 manageCompany">
+    <div class="row">
+        <div class="col-12 mx-auto companyTab ">
+            <div class="companyHead mx-auto">
+                <p>Manage Company</p>
+                <p>Add/Edit Company</p>
+            </div>
+            <div class=" mx-auto addcomp">
+                <span class="material-icons bar"> poll</span>
+                <button class="btn btn-success btn-align" routerLink="/addcompany">
+                    <mat-icon class="addco">add</mat-icon> COMPANY
+                </button>
+            </div>
+            <div>
+                <table class="table table-trapped tabl mx-auto">
+                    <thead>
+                        <tr>
+                            <th>Company Code</th>
+                            <th>Company Name</th>
+                            <th>Company CEO</th>
+                            <th>Company Website</th>
+                            <th>Stock Exchange</th>
+                            <th>Company Turnover</th>
+                            <th>Latest Stock Price</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of searchCompany">
+                            <td> {{item.companyCode}} </td>
+                            <td> {{item.companyName}} </td>
+                            <td> {{item.companyCEO}}</td>
+                            <td> {{item.companyWebsite}} </td>
+                            <td> {{item.stockExchange}} </td>
+                            <td> {{item.companyTurnover}} </td>
+                            <td class="las">{{item.latestStockPrice}}</td>
+                            <td> <button type="button" (click)="deleteCompany(item.companyCode)" class="btn btnbg">
+                                    <span class="material-icons bg">delete_outline</span>
+                                </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="center" *ngIf="searchCompany?.length < 1">
+                    <h3> No Records Available!</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<div class="container-fluid mt-5 manageCompany">
+    <div class="row">
+        <div class="col-12 mx-auto companyTab ">
+            <div class="companyHead mx-auto">
+                <p>Manage Company</p>
+                <p>Add/Edit Company</p>
+            </div>
+            <div class=" mx-auto addcomp">
+                <span class="material-icons bar"> poll</span>
+                <button class="btn btn-success btn-align" routerLink="/addcompany">
+                    <mat-icon class="addco">add</mat-icon> COMPANY
+                </button>
+            </div>
+            <div>
+                <table class="table table-trapped tabl mx-auto">
+                    <thead>
+                        <tr>
+                            <th>Company Code</th>
+                            <th>Company Name</th>
+                            <th>Company CEO</th>
+                            <th>Company Website</th>
+                            <th>Stock Exchange</th>
+                            <th>Company Turnover</th>
+                            <th>Latest Stock Price</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> {{updateUserInfo.companyCode}} </td>
+                            <td> {{updateUserInfo.companyName}} </td>
+                            <td> {{updateUserInfo.companyCeo}}</td>
+                            <td> {{updateUserInfo.companyWebsite}} </td>
+                            <td> {{updateUserInfo.stockExchange}} </td>
+                            <td> {{updateUserInfo.companyTurnover}} </td>
+                            <td> </td>
+                            <td> <button type="button" class="btn btnbg"><span class="material-icons bg">
+                                        delete_outline
+                                    </span>
+                                </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> -->

@@ -1,0 +1,17 @@
+<div class="container-fluid mt-5 manageCompany">
+    <div class="row">
+        <div class="col-12 mx-auto companyTab ">
+            <div class="row" >
+                <div class="col-9 lab" >
+                    <div *ngFor="let item of addCompany" class="space">{{item.companyCode}}</div>
+                    
+                
+                </div>
+                <div class="col-3 labs" >
+                    <div *ngFor="let item of addCompany" class="space">{{item.latestStockPrice}}</div>
+                    
+                </div>
+            </div>
+        <div>
+    </div>
+</div>

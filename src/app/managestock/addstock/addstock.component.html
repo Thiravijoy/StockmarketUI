@@ -1,0 +1,77 @@
+<div class="container-fluid mt-5 manageCompany">
+    <div class="row">
+        <div>
+            <button class="btn backed" routerLink="/managestock">
+                <mat-icon class="keyboard_backspace">keyboard_backspace</mat-icon>BACK
+            </button>
+        </div>
+        <div class="col-12 mx-auto companyTab ">
+            <div class="companyHead mx-auto">
+                <p>Add/Edit Stock</p>
+                <p>Complete your stock</p>
+            </div>
+            <div>
+                <form [formGroup]="stockForm" novalidate  z>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 mt-5">   
+                            <mat-form-field class="mt-2" appearance="legacy">
+                                <mat-label>Company</mat-label>
+                                <mat-select formControlName="companyCode" #companyCode>
+                                    <mat-option *ngFor="let item of addCompany" [value]="item.companyCode">
+                                        {{item.companyCode}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="i['companyCode'].getError('required')!=null">company Code is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4 col-sm-6 mt-5">
+                            <mat-form-field  class="mt-2" appearance="legacy" >
+                                <mat-label>Stock Price</mat-label>
+                                <input matInput type="number" placeholder="0" formControlName="stockPrice" #stockPrice>
+                                <span matPrefix> &#8377;</span>
+                                <span matSuffix>.00</span>
+                                <mat-error *ngIf="i['stockPrice'].getError('required')!=null">Stock Price is required</mat-error>
+                              </mat-form-field>
+                        </div>
+                    </div>
+                    <div>
+                        <button  class="btn btnsave" type="submit">
+                            <mat-icon class="done">done</mat-icon> SAVE
+                          </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mat-form-field class="mt-2" appearance="legacy">
+    <mat-label>Company</mat-label>
+    <mat-select formControlName="companyCode" #companyCode>
+        <mat-option *ngFor="let item of stockArray" [value]="item.companyName">
+            {{item.companyName}}
+        </mat-option>
+    </mat-select>
+    <mat-error *ngIf="i['companyCode'].getError('required')!=null">you must make a selection</mat-error>
+</mat-form-field> -->

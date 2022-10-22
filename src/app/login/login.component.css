@@ -1,0 +1,90 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.back {
+    width: 380px;
+    height: 410px;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+.set{
+    position: relative;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%); 
+}
+
+.input {
+    border: 0;
+    border-bottom: 2px solid gray;
+}
+
+.input:focus {
+    outline: 0px;
+    
+    box-shadow: none;
+    border-color: blueviolet;
+}
+
+div.logbutton {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#login {
+    margin-left: 30px;
+}
+
+.btn {
+    color: white;
+}
+
+.btn:hover {
+    color: white;
+}
+
+
+mat-icon.person-add {
+    display: inline-flex;
+    vertical-align: bottom;
+}
+
+mat-icon.powersettingsnew {
+    display: inline-flex;
+    vertical-align: bottom;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.material-icons {
+    cursor: pointer;
+}
+
+.background {
+    background-image: url("../../assets/images/banana.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;         
+}
+
+.stock {
+    width: 320px;
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("../../assets/images/stock.jpg")
+}
+ .center{
+    text-align: center;
+ }

@@ -1,0 +1,142 @@
+<div class="container-fluid mt-5 manageCompany">
+    <div class="row">
+        <div class="col-12 mx-auto companyTab ">
+            <div class="companyHead mx-auto">
+                <p>Manage Stock</p>
+                <p>Add/Edit Stock</p>
+            </div>
+            <div class=" mx-auto addcomp">
+                <form [formGroup]="stockForm" novalidate (ngSubmit)="searchStocks(companyCode,startDate,endDate)">
+                    <div class="row p-2">
+                        <div class="col-lg-1">
+                            <span class="material-icons bar"> poll</span>
+                        </div>
+                        <div class="col-lg-2">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Company</mat-label>
+                                <mat-select formControlName="companyCode" #companyCode>
+                                    <mat-option *ngFor="let item of addCompany" [value]="item.companyCode">
+                                        {{item.companyCode}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="s['companyCode'].getError('required')!=null">Company Code is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-2">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Start Date</mat-label>
+                                <input matInput [matDatepicker]="datepicker" placeholder="mm/dd/yyyy"
+                                    formControlName="startDate" #startDate>
+                                <mat-datepicker-toggle matSuffix [for]="datepicker">
+                                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                                </mat-datepicker-toggle>
+                                <mat-datepicker #datepicker></mat-datepicker>
+                                <mat-error *ngIf="s['startDate'].getError('required')!=null">StartDate is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-2">
+                            <mat-form-field appearance="outline">
+                                <mat-label>End Date</mat-label>
+                                <input matInput [matDatepicker]="picker" placeholder="mm/dd/yyyy"
+                                    formControlName="endDate" #endDate>
+                                <mat-datepicker-toggle matSuffix [for]="picker">
+                                    <mat-icon matDatepickerToggleIcon>calendar_today</mat-icon>
+                                </mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                                <mat-error *ngIf="s['endDate'].getError('required')!=null">EndDate is required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-lg-5  mt-1">
+                            <div class="left">
+                                <button class="btn btn-info btn-align" type="submit">
+                                    <mat-icon class="addco">search</mat-icon> SEARCH
+                                </button>
+                            </div>
+                            <div class="right">
+                                <button class="btn btn-success btn-align" type="button" routerLink="/addstock">
+                                    <mat-icon class="addco">add</mat-icon> STOCK
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-1">
+                        </div>
+                        <div class="col-md-2">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Minimum</mat-label>
+                                <input matInput placeholder="Minimum" [value]=this.minimum disabled>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-2">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Maximum</mat-label>
+                                <input matInput placeholder="Maximum" [value]=this.maximum disabled>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-2">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Average</mat-label>
+                                <input matInput placeholder="Average" [value]=this.average disabled>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-trapped tabl mx-auto">
+                        <thead>
+                            <tr>
+                                <th>Stock Price</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of price">
+                                <td class="las"><span matPrefix> &#8377;</span> {{item.stockPrice}} </td>
+                                <td>{{item.stockDateTime}}</td>
+                                <td> </td>
+                            </tr>
+                            <div *ngIf="price?.length < 1">
+                                <div colspan="3" class="center">
+                                    No Data Available
+                                </div>
+                            </div>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mat-form-field appearance="outline">
+    <mat-label>Company</mat-label>
+    <mat-select formControlName="company" #company>
+        <mat-option *ngFor="let item of stockArray" [value]="item.companyName">
+            {{item.companyName}}
+        </mat-option>
+    </mat-select>
+</mat-form-field> -->
+
+

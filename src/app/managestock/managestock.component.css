@@ -1,0 +1,53 @@
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+mat-icon.addco {
+    display: inline-flex;
+    vertical-align: bottom;
+}
+.btn-align{
+    height:45px;
+    margin-right: 4px;
+    color:aliceblue
+}
+.bar{
+    color:rgb(254, 87, 87);
+    font-size: 52px;
+}
+.companyTab{
+    padding-bottom: 30px;
+}
+mat-form-field {
+    width: 100%;
+}
+.right{
+   float: right;
+}
+.left{
+    float: left;
+}
+.tabl{ 
+        width:97%;
+        padding :10px;
+        margin-top: 40px;
+        position: relative;
+}
+th{
+    color:rgb(124, 12, 124);
+    opacity:0.7;
+    font-size: medium;
+    border-bottom: 2px solid black;
+    padding-bottom: 20px;
+}
+td,th{
+    text-align: left;  
+    
+}
+table {
+    border-collapse: collapse; 
+    width:97%;
+}

@@ -1,0 +1,110 @@
+
+
+.stock {
+    width: 210px;
+    height: 10%;
+    margin-top: 5px;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.fill {
+    flex: 1 1 auto;
+}
+
+
+.top {
+    background-image: linear-gradient(to left, rgba(251, 0, 0, 0), rgba(251, 0, 0, 0.7));
+  
+}
+
+.logout {
+    background-color: rgb(255, 246, 253);
+}
+
+.mat-sidenav a {
+    color:gray;
+    border-radius: 5px;
+}
+/* .mat-sidenav a:hover {
+    background-color: rgb(254, 87, 87);
+    color: white;
+    border-radius: 5px;
+} */
+
+.label {
+    margin-left: 10px;
+}
+.sidenav {
+    margin-top: 20px;   
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+mat-sidenav {
+    position: fixed;
+    top: 0; /* Sets the sticky toolbar to be on top */
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    
+ } 
+ mat-toolbar {
+    display:flex;
+    position: fixed;
+    right: 0;
+    height:10%;
+   
+}
+.active-list-item {
+    background-color: rgb(254, 87, 87) !important; /* Note: You could also use a custom theme */;
+    color: white !important;
+    border-radius: 5px;
+  }
+
+
+
+
+
+
+
+
+
+/* <div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12" class="left">
+            <mat-sidenav-container>
+                <mat-sidenav *ngIf="isLoggedIn" mode="side" opened class="vertical-menu col-sm-2">
+                    <span  class="left"><img style="height:10vh" class="stock" [src]="head"
+                            alt="stockmarket"></span>
+
+                    <mat-nav-list class="sidenav">
+                        <a mat-list-item routerLink="/dashcontent">
+                            <mat-icon>dashboard</mat-icon><label class="label">Dashboard</label>
+                        </a>
+                        <a mat-list-item>
+                            <mat-icon>library_books</mat-icon><label class="label">Manage Company </label>
+                        </a>
+                        <a mat-list-item>
+                            <mat-icon>content_paste</mat-icon><label class="label">Manage Stock </label>
+                        </a>
+                    </mat-nav-list>
+                </mat-sidenav>
+
+                <mat-sidenav-content>
+                    <span *ngIf="isLoggedIn" class="right">
+                        <mat-toolbar  class="top">
+                            <mat-toolbar-row>
+                                <span class="fill"></span>
+                                <button class="logout" routerLink="/login" mat-stroked-button>
+                                    <mat-icon class="keyboard-backspace">keyboard_backspace</mat-icon>LOGOUT
+                                </button>
+                            </mat-toolbar-row>
+                        </mat-toolbar>
+                    </span>
+                    <router-outlet></router-outlet>
+                </mat-sidenav-content>
+
+            </mat-sidenav-container>
+        </div>
+    </div>
+</div> */

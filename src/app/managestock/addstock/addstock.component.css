@@ -1,0 +1,33 @@
+.backed{
+    float: right;
+    margin-top: -100px;
+    background-color: rgb(232, 244, 244);
+    border:none
+}
+.btn:hover{
+    border: none;
+}
+.manageCompany{
+    margin-top: 180px !important;  
+    height: 70vh !important;
+}
+mat-icon.keyboard_backspace{
+    display: inline-flex;
+    vertical-align: bottom;
+}
+.companyTab{
+    padding-bottom: 20px;
+}
+mat-form-field {
+    width: 100%;
+}
+.done{
+    display: inline-flex;
+    vertical-align: bottom;
+   
+}
+.btnsave{
+    background-color: rgb(254, 87, 87);
+    float: right;
+    color:aliceblue
+}

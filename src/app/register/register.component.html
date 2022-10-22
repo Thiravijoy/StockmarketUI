@@ -1,0 +1,52 @@
+<div class="background">
+  <div class="set ">
+    <div class="back mx-auto">
+      <img class="stock" [src]="head" alt="stockmarket">
+      <form [formGroup]="RegisterForm" (ngSubmit)="registerSubmit()" novalidate class="mt-4">
+        <div class="mb-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="username" formControlName="userName">
+            <mat-error *ngIf="g['userName'].getError('required')!=null">Username is required</mat-error>
+            <!-- <mat-error *ngIf="f['userName'].getError('minlength')!=null">username should be atleast 8 letters</mat-error> -->
+          </mat-form-field>
+        </div>
+        <div class="mb-2">
+          <mat-form-field appearance="legacy">
+            <mat-label>Password</mat-label>
+            <input matInput type="passWord" placeholder="password" formControlName="passWord"
+              [type]="hide_eye ? 'password':'text'">
+            <span class="material-icons" matSuffix (click)="hide_eye = !hide_eye">{{ hide_eye ? 'visibility_off' :
+              'visibility'
+              }}</span>
+            <mat-error *ngIf="g['passWord'].getError('required')!=null">Password is required</mat-error>
+            <!-- <mat-error *ngIf="f['passWord'].getError('pattern')!=null">
+            Password length must be greater than or equal to 8 and password must contain one or more uppercase ,
+            lowercase , numeric and special characters
+          </mat-error> -->
+          </mat-form-field>
+        </div><br>
+        <div class="mb-2">
+          <mat-form-field appearance="legacy">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="passWord" formControlName="confirmpassWord" placeholder="confirm password"
+              [type]="hide_eye1 ? 'password':'text'">
+            <span class="material-icons" matSuffix (click)="hide_eye1 = !hide_eye1">{{ hide_eye1 ? 'visibility_off' :
+              'visibility' }}
+            </span>
+            <mat-error *ngIf="g['confirmpassWord'].getError('required')!=null">Confirm password is required</mat-error>
+            <mat-error *ngIf="g['confirmpassWord'].getError('mustMatch')!=null">Passwords did not match</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="logbutton">
+          <button type="button" class="btn btn-danger" id="cancel" routerLink="/login">
+            <mat-icon class="keyboard-backspace">keyboard_backspace</mat-icon> CANCEL
+          </button>
+          <button class="btn btn-success" id="login" type="submit">
+            <mat-icon class="done">done</mat-icon> REGISTER
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+
+<mat-sidenav-container>
+    <mat-sidenav *ngIf="isLoggedIn" mode="side" opened>
+        <span><img class="stock" [src]="head" alt="stockmarket"></span>
+        <mat-nav-list class="sidenav">
+            <a mat-list-item routerLink="/dashboard" routerLinkActive="active-link active-list-item" skipLocationChange="true">
+                <mat-icon>dashboard</mat-icon><label class="label">Dashboard</label>
+            </a>
+            <a mat-list-item routerLink="/managecompany" routerLinkActive="active-list-item">
+                <mat-icon>library_books</mat-icon><label class="label">Manage Company </label>
+            </a>
+            <a mat-list-item routerLink="/managestock" routerLinkActive="active-list-item">
+                <mat-icon>content_paste</mat-icon><label class="label">Manage Stock </label>
+            </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+            <mat-toolbar class="top" *ngIf="isLoggedIn">
+                <mat-toolbar-row>
+                    <span class="fill"></span>
+                    <button class="logout" routerLink="/login" (click)="logout()" mat-stroked-button >
+                        <mat-icon >keyboard_backspace</mat-icon>LOGOUT
+                    </button>
+                </mat-toolbar-row>
+            </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container-fluid">
+    
+    <div class="row">
+        <div class="col-12 ">
+            <span *ngIf="isLoggedIn"><img class="stock" [src]="head" alt="stockmarket"></span><br>
+            <mat-sidenav-container>
+                <mat-sidenav *ngIf="isLoggedIn" mode="side" opened class="col-2">
+                    <mat-nav-list class="sidenav">
+                        <a mat-list-item routerLink="/dashcontent">
+                            <mat-icon>dashboard</mat-icon><label class="label">Dashboard</label>
+                        </a>
+                        <a mat-list-item routerLink="/register">
+                            <mat-icon>library_books</mat-icon><label class="label">Manage Company </label>
+                        </a>
+                        <a mat-list-item routerLink="/register">
+                            <mat-icon>content_paste</mat-icon><label class="label">Manage Stock </label>
+                        </a>
+                    </mat-nav-list>
+                </mat-sidenav>
+               
+                <mat-sidenav-content [class]="isLoggedIn ? 'col-10' : 'col-12'">
+                    <router-outlet></router-outlet>
+                </mat-sidenav-content>
+         </mat-sidenav-container>   
+</div>
+</div>
+</div> -->
